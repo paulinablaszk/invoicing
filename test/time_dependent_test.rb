@@ -1,6 +1,6 @@
 require_relative 'test_helper'
 
-class TimeDependentTest < MiniTest::Unit::TestCase
+class TimeDependentTest < Minitest::Test
   class TimeDependentRecord < ActiveRecord::Base
     # All columns are renamed to test renaming
     acts_as_time_dependent

@@ -1,6 +1,6 @@
 require_relative 'test_helper.rb'
 
-class ConnectionAdapterExtTest < MiniTest::Unit::TestCase
+class ConnectionAdapterExtTest < Minitest::Test
   def using_database(database_type)
     if database_type.to_sym == database_used_for_testing
       # If the test is for the main database type of this test suite, just run it

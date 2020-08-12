@@ -3,7 +3,7 @@
 require_relative 'test_helper'
 require_relative 'support/ledger_item_helper'
 
-class RenderHTMLTest < MiniTest::Unit::TestCase
+class RenderHTMLTest < Minitest::Test
   def reference_output(filename)
     IO.readlines(File.join(File.dirname(__FILE__), 'ref-output', filename)).join
   end

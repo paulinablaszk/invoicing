@@ -2,7 +2,7 @@
 
 require_relative 'test_helper'
 
-class TaxableTest < MiniTest::Unit::TestCase
+class TaxableTest < Minitest::Test
   class SimpleTaxLogic
     def apply_tax(params)
       if params[:attribute].to_s == 'amount'

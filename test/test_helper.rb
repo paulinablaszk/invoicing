@@ -18,7 +18,7 @@ ActiveSupport::Dependencies.autoload_paths << File.join(File.dirname(__FILE__), 
 
 # Configure database cleaner
 DatabaseCleaner.strategy = :transaction
-class MiniTest::Unit::TestCase
+class Minitest::Test
   def setup
     DatabaseCleaner.start
   end

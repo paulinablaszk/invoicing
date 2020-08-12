@@ -1,6 +1,6 @@
 require_relative 'test_helper'
 
-class CachedRecordTest < MiniTest::Unit::TestCase
+class CachedRecordTest < Minitest::Test
   # Classes which this test uses
   class CachedRecord < ActiveRecord::Base
     acts_as_cached_record id: 'id'

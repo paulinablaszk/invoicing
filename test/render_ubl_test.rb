@@ -2,7 +2,7 @@
 
 require_relative 'test_helper'
 
-class RenderUBLTest < MiniTest::Unit::TestCase
+class RenderUBLTest < Minitest::Test
   def reference_output(filename)
     IO.readlines(File.join(File.dirname(__FILE__), 'ref-output', filename)).join
   end

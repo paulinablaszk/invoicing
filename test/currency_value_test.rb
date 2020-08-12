@@ -7,7 +7,7 @@ require_relative 'test_helper'
 # jokes about this sort of thing. The people are suffering badly.
 Invoicing::CurrencyValue::CURRENCIES['ZWD'] = {:symbol => 'ZW$', :round => 5_000_000}
 
-class CurrencyValueTest < MiniTest::Unit::TestCase
+class CurrencyValueTest < Minitest::Test
   class CurrencyValueRecord < ActiveRecord::Base
     validates_numericality_of :amount
     acts_as_currency_value :amount, :tax_amount, :currency => 'currency_code'

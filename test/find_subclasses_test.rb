@@ -39,7 +39,7 @@ end
 
 
 #####################
-class FindSubclassesTest < MiniTest::Unit::TestCase
+class FindSubclassesTest < Minitest::Test
   def test_known_subclasses
     # All subclasses of TestBaseclass except for TestSubclassNotInDatabase
     expected = ['TestBaseclass', 'TestModule::TestInsideModuleSubclass', 'TestOutsideModuleSubSubclass',

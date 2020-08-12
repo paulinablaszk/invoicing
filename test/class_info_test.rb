@@ -120,7 +120,7 @@ end
 
 
 #######################################################################################
-class ClassInfoTest < MiniTest::Unit::TestCase
+class ClassInfoTest < Minitest::Test
   def test_call_into_class_info_via_class
     assert_equal 'foo', ClassInfoTestRecord.class_foo
   end

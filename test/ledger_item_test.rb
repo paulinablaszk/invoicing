@@ -4,7 +4,7 @@ require_relative 'test_helper'
 require_relative "support/ledger_item_helper"
 
 ## The actual tests
-class LedgerItemTest < MiniTest::Unit::TestCase
+class LedgerItemTest < Minitest::Test
   def test_total_amount_is_currency_value
     record = MyLedgerItem.find(5)
     assert_equal '$432.10', record.total_amount_formatted
