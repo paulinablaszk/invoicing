@@ -209,6 +209,7 @@ module Invoicing
   module Taxable
     extend ActiveSupport::Concern
 
+
     module ActMethods
       # Declares that one or more attributes on this model object store monetary values to which tax may be
       # applied. Takes one or more attribute names, followed by an options hash:
@@ -250,8 +251,10 @@ module Invoicing
         @taxed_or_untaxed[attribute] = :untaxed
         @taxed_attributes[attribute] = nil
       elsif attribute =~ /^(#{attr_regex})_taxed$/
-        if (ActiveRecord::VERSION::MAJOR == 4 && ActiveRecord::VERSION::MINOR >= 2) || ActiveRecord::VERSION::MAJOR == 5
+        if (ActiveRecord::VERSION::MAJOR == 4 && ActiveRecord::VERSION::MINOR >= 2) || (ActiveRecord::VERSION::MAJOR == 5 && ActiveRecord::VERSION::MINOR < 2)
           @attributes.write_cast_value(attribute, value)
+        elsif (ActiveRecord::VERSION::MAJOR == 5 && ActiveRecord::VERSION::MINOR >= 2) || ActiveRecord::VERSION::MAJOR == 5
+          @attributes[attribute] = ActiveModel::Attribute.with_cast_value(attribute, value, ActiveModel::Type.default_value)
         else
           @attributes[attribute] = value
         end
@@ -344,7 +347,6 @@ module Invoicing
       private :generate_attr_taxable_methods, :generate_attr_taxable_other_method
     end # module ClassMethods
 
-
     class ClassInfo < Invoicing::ClassInfo::Base #:nodoc:
       # Performs the conversion between taxed and untaxed values. Arguments +from_status+ and
       # +to_status+ must each be either <tt>:taxed</tt> or <tt>:untaxed</tt>.
@@ -360,6 +362,5 @@ module Invoicing
         end
       end
     end
-
   end
 end
