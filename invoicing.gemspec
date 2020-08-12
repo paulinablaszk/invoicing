@@ -26,9 +26,9 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{lib}/**/*', 'LICENSE', 'Rakefile', 'README.md']
 
-  s.required_ruby_version = '>= 2.0.0'
+  s.required_ruby_version = '>= 2.4.0'
 
-  s.add_runtime_dependency 'rails', '>= 3.2.13', '< 5.2'
+  s.add_runtime_dependency 'rails', '>= 5.0'
 
   s.add_development_dependency 'minitest', '> 4'
   s.add_development_dependency 'sqlite3', '< 1.4'
