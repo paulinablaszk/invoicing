@@ -152,8 +152,6 @@ module Invoicing
         if info.previous_info.nil? # Called for the first time?
           # Set the 'amount' columns to act as currency values
           acts_as_currency_value(info.method(:net_amount), info.method(:tax_amount))
-
-          extend Invoicing::FindSubclasses
         end
       end
     end

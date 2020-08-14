@@ -19,11 +19,6 @@ Gem::Specification.new do |s|
      and accountant-friendly.
   DESC
 
-  s.post_install_message = <<-POST_INSTALL
-    1.2.x will be the last version to support Ruby < 2.4 and Rails < 5.
-    The next version will introduce breaking changes including removal of the `FindSubClasses` class
-  POST_INSTALL
-
   s.files = Dir['{lib}/**/*', 'LICENSE', 'Rakefile', 'README.md']
 
   s.required_ruby_version = '>= 2.4.0'

@@ -4,7 +4,6 @@ require "invoicing/class_info"  # load first because other modules depend on thi
 require "invoicing/cached_record"
 require "invoicing/connection_adapter_ext"
 require "invoicing/currency_value"
-require "invoicing/find_subclasses"
 require "invoicing/ledger_item"
 require "invoicing/line_item"
 require "invoicing/price"

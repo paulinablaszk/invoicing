@@ -315,7 +315,6 @@ module Invoicing
         acts_as_currency_value(info.method(:total_amount), info.method(:tax_amount),
           :currency => info.method(:currency), :value_for_formatting => :value_for_formatting)
 
-        extend  Invoicing::FindSubclasses
         include Invoicing::LedgerItem::RenderHTML
         include Invoicing::LedgerItem::RenderUBL
       end # def acts_as_ledger_item
